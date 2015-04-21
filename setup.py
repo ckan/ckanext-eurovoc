@@ -23,8 +23,8 @@ setup(
     url='https://github.com/ckan/ckanext-eurovoc',
 
     # Author details
-    author='''Sean Hammond''',
-    author_email='''''',
+    author='''Brook Elgie''',
+    author_email='''brook.elgie@okfn.org''',
 
     # Choose your license
     license='AGPL',
@@ -46,7 +46,7 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        '': ['**/*.html',],
+        '': ['**/*.html', ],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
