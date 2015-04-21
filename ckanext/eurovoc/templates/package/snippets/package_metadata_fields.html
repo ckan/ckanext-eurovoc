@@ -1,0 +1,16 @@
+{% ckan_extends %}
+
+{% block package_metadata_fields %}
+  <div class="control-group">
+    <label class="control-label" for="field-eurovoc_subject">{{ _("Eurovoc Subject") }}</label>
+    <div class="controls">
+      <select id="field-eurovoc_subject" name="eurovoc_subject" data-module="autocomplete">
+        {% set eurovoc_subject_data = data.get('eurovoc_subject', '') %}
+        {% for eurovoc_subject in h.eurovoc_subjects()  %}
+          <option value="{{ eurovoc_subject[0] }}" {% if eurovoc_subject[1] == eurovoc_subject_data %}selected="selected"{% endif %}>{{ eurovoc_subject[1] }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  {{ super() }}
+{% endblock %}
