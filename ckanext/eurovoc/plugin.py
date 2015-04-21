@@ -1,3 +1,5 @@
+import json
+
 from ckan.common import _
 
 import ckan.plugins as plugins
@@ -49,6 +51,8 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IDatasetForm)
     plugins.implements(plugins.ITemplateHelpers, inherit=True)
     plugins.implements(plugins.IValidators)
+    plugins.implements(plugins.IPackageController, inherit=True)
+    plugins.implements(plugins.IFacets)
 
     # IConfigurer
     def update_config(self, config):
@@ -103,3 +107,36 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         return {
             'eurovoc_text_output': _eurovoc_text_output,
         }
+
+    # IFacets
+
+    def dataset_facets(self, facets_dict, package_type):
+        self._update_facets(facets_dict)
+        return facets_dict
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        self._update_facets(facets_dict)
+        return facets_dict
+
+    def organization_facets(self, facets_dict, organization_type, package_type):
+        self._update_facets(facets_dict)
+        return facets_dict
+
+    def _update_facets(self, facets_dict):
+        facets_dict.update({
+            'eurovoc_subject_label': plugins.toolkit._('Eurovoc Categories')
+        })
+
+    # IPackageController
+
+    def before_index(self, dataset_dict):
+        '''
+        Insert `eurovoc_subject_label` into solr index derived from the
+        dataset_dict's `eurovoc_subject` field.
+        '''
+        if dataset_dict.get('eurovoc_subject'):
+            label = _eurovoc_text_output(dataset_dict.get('eurovoc_subject'))
+            if label is not None:
+                dataset_dict['eurovoc_subject_label'] = label
+
+        return dataset_dict
