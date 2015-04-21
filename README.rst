@@ -12,17 +12,14 @@
 ckanext-eurovoc
 =============
 
-.. Put a description of your extension here:
-   What does it do? What features does it have?
-   Consider including some screenshots or embedding a video!
+Add top-level Eurovoc categories to the dataset schema.
 
 
 ------------
 Requirements
 ------------
 
-For example, you might want to mention here which versions of CKAN this
-extension works with.
+Compatible with CKAN 2.2 and 2.3.
 
 
 ------------
@@ -50,17 +47,6 @@ To install ckanext-eurovoc:
 4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
 
      sudo service apache2 reload
-
-
----------------
-Config Settings
----------------
-
-Document any required or optional config settings here. For example::
-
-    # The minimum number of hours to wait before re-checking a resource
-    # (optional, default: 24).
-    ckanext.deadoralive.recheck_resources_after = 24
 
 
 ------------------------
