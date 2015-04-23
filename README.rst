@@ -62,6 +62,27 @@ do::
     pip install -r dev-requirements.txt
 
 
+-------------
+Configuration
+-------------
+
+The display language for Eurovoc category labels and additional solr search
+terms are defined in category configuration files. These should be placed in
+``eurovoc/categories/categories_*.json``, where '*' is the two-letter
+country code for the language used.
+
+The category config file to be used is defined in ckan config:
+
+    ckanext.eurovoc.categories = categories_se.json  # sweden
+
+If no categories file is defined, ``categories_en.json`` is used.
+
+If the category file is changed, the solr search index will need to be rebuilt
+for the changes to fully take effect:
+
+    paster search-index rebuild
+
+
 -----------------
 Running the Tests
 -----------------

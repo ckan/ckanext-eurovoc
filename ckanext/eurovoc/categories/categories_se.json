@@ -1,0 +1,149 @@
+[
+    {
+        "id": "http://eurovoc.europa.eu/100142",
+        "label": "Politik",
+        "additional_search_terms": [
+            "politics"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100143",
+        "label": "Internationella Förbindelser",
+        "additional_search_terms": [
+            "international relations"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100144",
+        "label": "Europeiska Unionen",
+        "additional_search_terms": [
+            "european union"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100145",
+        "label": "Lag Och Rätt",
+        "additional_search_terms": [
+            "law"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100146",
+        "label": "Ekonomi",
+        "additional_search_terms": [
+            "economics"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100147",
+        "label": "Handel Och Affärsverksamhet",
+        "additional_search_terms": [
+            "trade"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100148",
+        "label": "Finanser",
+        "additional_search_terms": [
+            "finance"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100149",
+        "label": "Sociala Frågor",
+        "additional_search_terms": [
+            "social questions"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100150",
+        "label": "Utbildning Och Kommunikation",
+        "additional_search_terms": [
+            "education and communications"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100151",
+        "label": "Vetenskap",
+        "additional_search_terms": [
+            "science"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100152",
+        "label": "Företag Och Konkurrens",
+        "additional_search_terms": [
+            "business and competition"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100153",
+        "label": "Sysselsättning Och Arbete",
+        "additional_search_terms": [
+            "employment and working conditions"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100154",
+        "label": "Transport",
+        "additional_search_terms": [
+            "transport"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100155",
+        "label": "Miljö",
+        "additional_search_terms": [
+            "environment"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100156",
+        "label": "Jordbruk, Skogsbruk Och Fiske",
+        "additional_search_terms": [
+            "agriculture, forestry and fisheries"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100157",
+        "label": "Jordbrukslivsmedelsindustri",
+        "additional_search_terms": [
+            "agri-foodstuffs"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100158",
+        "label": "Produktion, Teknik Och Forskning",
+        "additional_search_terms": [
+            "production, technology and research"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100159",
+        "label": "Energi",
+        "additional_search_terms": [
+            "energy"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100160",
+        "label": "Industri",
+        "additional_search_terms": [
+            "industry"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100161",
+        "label": "Geografi",
+        "additional_search_terms": [
+            "geography"
+        ]
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100162",
+        "label": "Internationella Organisationer",
+        "additional_search_terms": [
+            "international organisations"
+        ]
+    }
+]

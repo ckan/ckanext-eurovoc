@@ -1,0 +1,107 @@
+[
+    {
+        "id": "http://eurovoc.europa.eu/100142",
+        "label": "Politics",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100143",
+        "label": "International Relations",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100144",
+        "label": "European Union",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100145",
+        "label": "Law",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100146",
+        "label": "Economics",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100147",
+        "label": "Trade",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100148",
+        "label": "Finance",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100149",
+        "label": "Social Questions",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100150",
+        "label": "Education And Communications",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100151",
+        "label": "Science",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100152",
+        "label": "Business And Competition",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100153",
+        "label": "Employment And Working Conditions",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100154",
+        "label": "Transport",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100155",
+        "label": "Environment",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100156",
+        "label": "Agriculture, Forestry And Fisheries",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100157",
+        "label": "Agri-foodstuffs",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100158",
+        "label": "Production, Technology And Research",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100159",
+        "label": "Energy",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100160",
+        "label": "Industry",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100161",
+        "label": "Geography",
+        "additional_search_terms": []
+    },
+    {
+        "id": "http://eurovoc.europa.eu/100162",
+        "label": "International Organisations",
+        "additional_search_terms": []
+    }
+]
