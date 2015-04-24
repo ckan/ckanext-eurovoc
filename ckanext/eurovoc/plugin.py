@@ -21,12 +21,21 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     def __init__(self, *args, **kwargs):
         self.categories = []
 
+        # eurovoc_category is used as the field name in the package schema.
+        # This can be customised in ckan config by setting a value for
+        # `ckanext.eurovoc.field_name`.
+        self.eurovoc_category = 'eurovoc_category'
+
     # IConfigurable
 
     def configure(self, config):
-        '''
+        '''Set up EurovocPlugin from config options in ckan config.
+
         Get and parse a categories config file to determine the correct label
         language and additional search terms for each eurovoc category.
+
+        Set self.eurovoc_category to use in the package schema, if defined in
+        `ckanext.eurovoc.category_field_name`.
         '''
         categories_config_filename = config.get('ckanext.eurovoc.categories',
                                                 None)
@@ -41,6 +50,12 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         with open(categories_json) as categories_list:
             self.categories = json.load(categories_list)
 
+        # Custom category field name for dataset schema.
+        category_field_name = config.get('ckanext.eurovoc.category_field_name',
+                                         None)
+        if category_field_name is not None:
+            self.eurovoc_category = category_field_name
+
     # IConfigurer
 
     def update_config(self, config):
@@ -50,7 +65,7 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     def _modify_package_schema(self, schema):
         schema.update({
-            'eurovoc_category': [
+            self.eurovoc_category: [
                 toolkit.get_validator('ignore_missing'),
                 toolkit.get_converter('convert_to_extras')
             ]
@@ -70,7 +85,7 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     def show_package_schema(self):
         schema = super(EurovocPlugin, self).show_package_schema()
         schema.update({
-            'eurovoc_category': [
+            self.eurovoc_category: [
                 toolkit.get_converter('convert_from_extras'),
                 toolkit.get_validator('eurovoc_text_output'),
                 toolkit.get_validator('ignore_missing')
@@ -83,6 +98,9 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     def package_types(self):
         return []
+
+    def setup_template_variables(self, context, data_dict):
+        toolkit.c.eurovoc_category_field_name = self.eurovoc_category
 
     # ITemplateHelpers
 
@@ -123,7 +141,7 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         into solr index derived from the dataset_dict's `eurovoc_category`
         field.
         '''
-        eurovoc_category = dataset_dict.get('eurovoc_category', None)
+        eurovoc_category = dataset_dict.get(self.eurovoc_category, None)
         if eurovoc_category is not None:
             label = self._eurovoc_text_output(eurovoc_category)
             search_terms = []

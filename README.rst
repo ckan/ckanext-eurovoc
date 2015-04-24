@@ -8,9 +8,9 @@
 .. image:: https://coveralls.io/repos/ckan/ckanext-eurovoc/badge.png?branch=master
   :target: https://coveralls.io/r/ckan/ckanext-eurovoc?branch=master
 
-=============
+===============
 ckanext-eurovoc
-=============
+===============
 
 Add top-level Eurovoc categories to the dataset schema.
 
@@ -66,22 +66,39 @@ do::
 Configuration
 -------------
 
+ckanext.eurovoc.categories
+++++++++++++++++++++++++++
+
 The display language for Eurovoc category labels and additional solr search
 terms are defined in category configuration files. These should be placed in
 ``eurovoc/categories/categories_*.json``, where '*' is the two-letter
 country code for the language used.
 
-The category config file to be used is defined in ckan config:
+The category config file to be used is defined in ckan config::
 
     ckanext.eurovoc.categories = categories_se.json  # sweden
 
 If no categories file is defined, ``categories_en.json`` is used.
 
 If the category file is changed, the solr search index will need to be rebuilt
-for the changes to fully take effect:
+for the changes to fully take effect::
 
     paster search-index rebuild
 
+
+ckanext.eurovoc.category_field_name
++++++++++++++++++++++++++++++++++++
+
+It is sometimes necessary to customise the dataset schema field name being
+used to store the eurovoc category value. This can be set in the ckan config,
+e.g.::
+
+    ckanext.eurovoc.category_field_name = theme
+
+The default value is ``eurovoc_category``.
+
+Note: Changing the value of ``category_field_name`` will not migrate previous
+values assigned to the old field name.
 
 -----------------
 Running the Tests
@@ -97,9 +114,9 @@ coverage installed in your virtualenv (``pip install coverage``) then run::
     nosetests --nologcapture --with-pylons=test.ini --with-coverage --cover-package=ckanext.eurovoc --cover-inclusive --cover-erase --cover-tests
 
 
----------------------------------
+-----------------------------------
 Registering ckanext-eurovoc on PyPI
----------------------------------
+-----------------------------------
 
 ckanext-eurovoc should be availabe on PyPI as
 https://pypi.python.org/pypi/ckanext-eurovoc. If that link doesn't work, then
@@ -126,9 +143,9 @@ steps:
        git push --tags
 
 
-----------------------------------------
+------------------------------------------
 Releasing a New Version of ckanext-eurovoc
-----------------------------------------
+------------------------------------------
 
 ckanext-eurovoc is availabe on PyPI as https://pypi.python.org/pypi/ckanext-eurovoc.
 To publish a new version to PyPI follow these steps:
