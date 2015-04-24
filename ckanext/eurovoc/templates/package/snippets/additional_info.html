@@ -1,10 +1,10 @@
 {% ckan_extends %}
 
 {% block extras scoped %}
-  {% if pkg_dict[c.eurovoc_category_field_name] %}
+  {% if pkg_dict[h.eurovoc_category_field_name] %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Eurovoc") }}</th>
-      <td class="dataset-details">{{ pkg_dict[c.eurovoc_category_field_name] }}</td>
+      <td class="dataset-details">{{ pkg_dict[h.eurovoc_category_field_name] }}</td>
     </tr>
   {% endif %}
   {{ super() }}

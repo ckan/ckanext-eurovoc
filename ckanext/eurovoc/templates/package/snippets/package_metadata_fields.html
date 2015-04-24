@@ -4,8 +4,8 @@
   <div class="control-group">
     <label class="control-label" for="field-eurovoc_category">{{ _("Eurovoc") }}</label>
     <div class="controls">
-      <select id="field-eurovoc_category" name="{{ c.eurovoc_category_field_name }}" data-module="autocomplete">
-        {% set eurovoc_category_data = data.get(c.eurovoc_category_field_name, '') %}
+      <select id="field-eurovoc_category" name="{{ h.eurovoc_category_field_name }}" data-module="autocomplete">
+        {% set eurovoc_category_data = data.get(h.eurovoc_category_field_name, '') %}
         {% for eurovoc_category in h.eurovoc_categories()  %}
           <option value="{{ eurovoc_category[0] }}" {% if eurovoc_category[1] == eurovoc_category_data %}selected="selected"{% endif %}>{{ eurovoc_category[1] }}</option>
         {% endfor %}

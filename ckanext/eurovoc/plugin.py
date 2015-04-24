@@ -99,13 +99,13 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     def package_types(self):
         return []
 
-    def setup_template_variables(self, context, data_dict):
-        toolkit.c.eurovoc_category_field_name = self.eurovoc_category
-
     # ITemplateHelpers
 
     def get_helpers(self):
-        return {'eurovoc_categories': self._eurovoc_categories_helper}
+        return {
+            'eurovoc_categories': self._eurovoc_categories_helper,
+            'eurovoc_category_field_name': self.eurovoc_category
+        }
 
     # IValidators
 
