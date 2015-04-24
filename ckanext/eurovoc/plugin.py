@@ -19,6 +19,7 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IFacets)
 
     def __init__(self, *args, **kwargs):
+        super(self.__class__, self).__init__(*args, **kwargs)
         self.categories = []
 
         # eurovoc_category is used as the field name in the package schema.
