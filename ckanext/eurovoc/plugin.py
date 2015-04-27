@@ -10,11 +10,12 @@ DEFAULT_EUROVOC_CATEGORY_NAME = 'eurovoc_category'
 
 class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
-    '''Add top-level Eurovoc categories to search and filtering.
+    '''Provides helpers and validators to manage Eurovoc top-level categories.
 
-    EurovocPlugin does not add anything to the ckan dataset schema. Either
-    modify the schema in your own extension, or use the `EurovocDatasetPlugin`
-    extension by adding `eurovoc_dataset` to `ckan.plugins`.
+    EurovocPlugin does not add anything to the ckan dataset schema or
+    templates. Either modify the schema and add templates in your own
+    extension, or use the `EurovocDatasetPlugin` extension by adding
+    `eurovoc_dataset` to `ckan.plugins`.
     '''
 
     plugins.implements(plugins.IConfigurable)
