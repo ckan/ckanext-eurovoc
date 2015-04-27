@@ -18,7 +18,6 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''
 
     plugins.implements(plugins.IConfigurable)
-    plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers, inherit=True)
     plugins.implements(plugins.IValidators)
     plugins.implements(plugins.IPackageController, inherit=True)
@@ -63,17 +62,13 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         if category_field_name is not None:
             self.eurovoc_category = category_field_name
 
-    # IConfigurer
-
-    def update_config(self, config):
-        toolkit.add_template_directory(config, 'templates')
-
     # ITemplateHelpers
 
     def get_helpers(self):
         return {
             'eurovoc_categories': self._eurovoc_categories_helper,
-            'eurovoc_category_field_name': self._get_eurovoc_category_field_name
+            'eurovoc_category_field_name': self._get_eurovoc_category_field_name,
+            'eurovoc_category_label': self._eurovoc_text_output
         }
 
     # IValidators
@@ -175,10 +170,16 @@ class EurovocDatasetPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     plugins.implements(plugins.IDatasetForm)
     plugins.implements(plugins.IConfigurable)
+    plugins.implements(plugins.IConfigurer)
 
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.eurovoc_category = DEFAULT_EUROVOC_CATEGORY_NAME
+
+    # IConfigurer
+
+    def update_config(self, config):
+        toolkit.add_template_directory(config, 'templates')
 
     # IConfigurable
 
