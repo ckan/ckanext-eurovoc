@@ -61,5 +61,6 @@ setup(
     entry_points='''
         [ckan.plugins]
         eurovoc=ckanext.eurovoc.plugin:EurovocPlugin
+        eurovoc_dataset=ckanext.eurovoc.plugin:EurovocDatasetPlugin
     ''',
 )

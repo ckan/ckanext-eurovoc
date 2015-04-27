@@ -100,6 +100,21 @@ The default value is ``eurovoc_category``.
 Note: Changing the value of ``category_field_name`` will not migrate previous
 values assigned to the old field name.
 
+
+Adding your own eurovoc field to the dataset schema
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The Eurovoc plugin doesn't automatically add a Eurovoc category field to your
+dataset schema. You can either add a field to the schema within your own
+extension, using the appropriate ``IDatasetForm`` interface methods, or add
+``eurovoc_dataset`` to ``ckan.plugins`` if you aren't changing the dataset
+schema yourself.
+
+If you are defining your own Eurovoc category field name, ensure you have set
+it as the value for ``ckanext.eurovoc.category_field_name``, as mentioned
+above.
+
+
 -----------------
 Running the Tests
 -----------------
