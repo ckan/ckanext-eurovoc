@@ -94,9 +94,11 @@ class EurovocPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         return facets_dict
 
     def _update_facets(self, facets_dict):
-        facets_dict.update({
-            'eurovoc_category_label': plugins.toolkit._('Eurovoc Categories')
-        })
+        '''Add `eurovoc_category_label` to facets if not already present.'''
+        if 'eurovoc_category_label' not in facets_dict:
+            facets_dict.update({
+                'eurovoc_category_label': plugins.toolkit._('Eurovoc Categories')
+            })
 
     # IPackageController
 

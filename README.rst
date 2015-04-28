@@ -66,9 +66,6 @@ do::
 Configuration
 -------------
 
-Adding templates, and Eurovoc category field to the dataset schema
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 The Eurovoc plugin doesn't automatically change CKAN templates or add a Eurovoc
 category field to your dataset schema.
 
@@ -122,6 +119,17 @@ The default value is ``eurovoc_category``.
 
 Note: Changing the value of ``category_field_name`` will not migrate previous
 values assigned to the old field name.
+
+
+Search facet
+++++++++++++
+
+The Eurovoc plugin will add a faceted search option to dataset, group and
+organization search page.
+
+You can make adjustments to the Eurovoc facet in your own extension by
+updating the ``eurovoc_category_label`` entry in the facet dictionary using
+the appropriate ``IFacets`` interface methods.
 
 
 -----------------
