@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[ckanext-eurovoc.ckanext-eurovocpot]
+file_filter = i18n/<lang>/LC_MESSAGES/ckanext-eurovoc.po
+source_file = i18n/ckanext-eurovoc.pot
+source_lang = en
+type = PO
+
